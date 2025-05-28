@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
+import "./src/env.js";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/dashboard?asset=btc",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
